@@ -17,30 +17,22 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 let manager = [];
 let engineer = [];
 let intern = [];
+let id = [];
 
 
-function init() {
+const init = () => {
     console.log('Please build your team:');
     inquirer
         .prompt(questions.managerQuestions)  
         .then((answers) =>{ 
             // console.log(answers)
             manager.push(answers);
+            id.push(answers.managersID);
             addAnotherEmployee();
         });
 };
 
-// function addManager(){
-//     inquirer
-//     .prompt(questions.managerQuestions)  
-//     .then((answers) =>{ 
-//         console.log(answers)
-//         addAnotherEmployee()
-//         // answersGiven.push(answers);
-//     });
-// };
-
-function addAnotherEmployee(){
+const addAnotherEmployee = () => {
     inquirer
     .prompt(questions.addEmployee)  
     .then((answers) =>{ 
@@ -54,8 +46,15 @@ function addAnotherEmployee(){
             console.log(manager);
             console.log(engineer);
             console.log(intern);
+            console.log(id);
+            // Generate classes?
             
-            // Generate class?
+            console.log('*********************************************');
+            console.log(`Manager's name is: ${manager[0].managersName}`);
+            console.log(`Engineer 2's Name is: ${engineer[1].engineersName}`);
+            console.log(`Engineer 2's ID is: ${engineer[1].engineersID}`);
+
+            
             
             //what to do with the answers collated from the user?
             //writeToFile(answers)
@@ -63,24 +62,30 @@ function addAnotherEmployee(){
     });
 };
 
-function addEngineerQuestions() {
+const addEngineerQuestions = () => {
+    // let count = 1;
     inquirer
     .prompt(questions.engineerQuestions)  
     .then((answers) =>{ 
-        console.log(answers)
+        console.log(answers);
         engineer.push(answers);
-        // or generate class i.e. const engineer[1] = new Engineer ();?
+        id.push(answers.engineersID);
+        // or generate class i.e. const engineer[1] = new Engineer(answers.engineersGithub);?
+        
+        // count++;
         addAnotherEmployee()
         // answersGiven.push(answers);
     });
 };
 
-function addInternQuestions() {
+const addInternQuestions = () => {
     inquirer
         .prompt(questions.internQuestions)  
         .then((answers) =>{ 
             console.log(answers)
             intern.push(answers);
+            id.push(answers.internsID);
+
             addAnotherEmployee()
             // answersGiven.push(answers);
         });         
@@ -94,3 +99,5 @@ function addInternQuestions() {
 
 // function call to initialize program when you type node index.js into terminal
 init();
+
+module.exports.id = id;
