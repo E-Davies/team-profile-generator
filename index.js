@@ -9,7 +9,7 @@ const fs = require("fs");
 const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
-// const render = require("./src/page-template.js");
+const render = require("./src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
@@ -39,7 +39,7 @@ const addAnotherEmployee = () => {
         // console.log(answers)
         if(answers.employeeType == 'Engineer'){
             addEngineerQuestions();
-        }else if (answers.employeeType == 'Intern'){
+        }else if(answers.employeeType == 'Intern'){
             addInternQuestions()
         }else{
             console.log('Building team complete')
@@ -57,7 +57,7 @@ const addAnotherEmployee = () => {
             
             
             //what to do with the answers collated from the user?
-            //writeToFile(answers)
+            //writeToFile(manager, engineer, intern);
         };
     });
 };
@@ -74,7 +74,6 @@ const addEngineerQuestions = () => {
         
         // count++;
         addAnotherEmployee()
-        // answersGiven.push(answers);
     });
 };
 
@@ -87,14 +86,13 @@ const addInternQuestions = () => {
             id.push(answers.internsID);
 
             addAnotherEmployee()
-            // answersGiven.push(answers);
         });         
 };
 
-// function writeToFile(manager, engineer, intern){
-//     fs.writeFile('./output/team.html', render(manager, engineer, intern), (err) => 
-//     err ? console.error(err) : console.log("Success! You're team page has been created. You will find the team.html file in the output folder."))
-// };
+function writeToFile(manager, engineer, intern){
+    fs.writeFile('./output/team.html', render(manager, engineer, intern), (err) => 
+    err ? console.error(err) : console.log("Success! You're team page has been created. You will find the team.html file in the output folder."))
+};
 
 
 // function call to initialize program when you type node index.js into terminal
