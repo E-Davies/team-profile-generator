@@ -44,23 +44,9 @@ const addAnotherEmployee = () => {
         }else if(answers.employeeType == 'Intern'){
             addInternQuestions()
         }else{
-            console.log('Building team complete')
+            console.log('You have finished building your team.')
             console.log(team);
-            // console.log(manager);
-            // console.log(engineer);
-            // console.log(intern);
             console.log(id);
-            // Generate classes?
-            
-            // console.log('*********************************************');
-            // console.log(`Manager's number is: ${team[0].getOfficeNumber()}`);
-            // console.log(team[0].getRole());
-            // console.log('                                             ');
-            // console.log(`Manager's role is: ${team[0].getRole()}`);
-            // console.log(team[1].getRole());
-
-            // console.log(`Engineer 2's Name is: ${engineer[1].engineersName}`);
-            // console.log(`Engineer 2's ID is: ${engineer[1].engineersID}`);
            
             //Func call to use the team array (that's been created based on user input) to create a HTML file
             writeToFile(team);
@@ -103,3 +89,9 @@ function writeToFile(team){
 init();
 
 module.exports.id = id;
+
+
+
+
+//TODO:
+//  - in the questions.js file - how can I check ID input against ID array?
