@@ -6,4 +6,6 @@ body{
     border: 0px;
 }
 
-
+.card-body{
+    background-color: #ecf4ff;
+}
