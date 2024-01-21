@@ -55,6 +55,8 @@ function addAnotherEmployee(){
             console.log(engineer);
             console.log(intern);
             
+            // Generate class?
+            
             //what to do with the answers collated from the user?
             //writeToFile(answers)
         };
@@ -67,6 +69,7 @@ function addEngineerQuestions() {
     .then((answers) =>{ 
         console.log(answers)
         engineer.push(answers);
+        // or generate class i.e. const engineer[1] = new Engineer ();?
         addAnotherEmployee()
         // answersGiven.push(answers);
     });
