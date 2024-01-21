@@ -74,7 +74,7 @@ const addInternQuestions = () => {
 //Function to use the team array (that's been created based on user input) to create a HTML file
 function writeToFile(team){
     fs.writeFile(outputPath, render(team), (err) => 
-    err ? console.error(err) : console.log("Success! You're team page has been created. You will find the team.html file in the output folder."))
+    err ? console.error(err) : console.log("Success! Your team page has been created. You will find the team.html file in the output folder."))
 };
 
 
@@ -88,3 +88,4 @@ module.exports.id = id;
 
 //TODO:
 //  - in the questions.js file - how can I check ID input against ID array?
+//  - sort out flex of cards or maybe add a row per manager, engineer, intern?
