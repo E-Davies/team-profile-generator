@@ -14,7 +14,10 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-let answersGiven = [];
+let manager = [];
+let engineer = [];
+let intern = [];
+
 
 function init() {
     console.log('Please build your team:');
@@ -22,13 +25,20 @@ function init() {
         .prompt(questions.managerQuestions)  
         .then((answers) =>{ 
             // console.log(answers)
-            // answersGiven.push(answers);
+            manager.push(answers);
             addAnotherEmployee();
-            
-            //what to do with the answers collated from the user?
-            //writeToFile(answers)
         });
-}
+};
+
+// function addManager(){
+//     inquirer
+//     .prompt(questions.managerQuestions)  
+//     .then((answers) =>{ 
+//         console.log(answers)
+//         addAnotherEmployee()
+//         // answersGiven.push(answers);
+//     });
+// };
 
 function addAnotherEmployee(){
     inquirer
@@ -36,36 +46,48 @@ function addAnotherEmployee(){
     .then((answers) =>{ 
         // console.log(answers)
         if(answers.employeeType == 'Engineer'){
-            askEngineerQuestions();
+            addEngineerQuestions();
         }else if (answers.employeeType == 'Intern'){
-            askInternQuestions()
+            addInternQuestions()
         }else{
-            console.log(`else console.log answers:${answers}`);
-            // console.log(answersGiven);
-        // answersGiven.push(answers);
-        }
+            console.log('Building team complete')
+            console.log(manager);
+            console.log(engineer);
+            console.log(intern);
+            
+            //what to do with the answers collated from the user?
+            //writeToFile(answers)
+        };
     });
-}
+};
 
-function askEngineerQuestions() {
+function addEngineerQuestions() {
     inquirer
     .prompt(questions.engineerQuestions)  
     .then((answers) =>{ 
         console.log(answers)
+        engineer.push(answers);
         addAnotherEmployee()
         // answersGiven.push(answers);
     });
-}
+};
 
-function askInternQuestions() {
+function addInternQuestions() {
     inquirer
         .prompt(questions.internQuestions)  
         .then((answers) =>{ 
             console.log(answers)
+            intern.push(answers);
             addAnotherEmployee()
             // answersGiven.push(answers);
         });         
-}
+};
+
+// function writeToFile(manager, engineer, intern){
+//     fs.writeFile('./output/team.html', render(manager, engineer, intern), (err) => 
+//     err ? console.error(err) : console.log("Success! You're team page has been created. You will find the team.html file in the output folder."))
+// };
+
 
 // function call to initialize program when you type node index.js into terminal
 init();
