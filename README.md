@@ -68,7 +68,7 @@ This application is covered under the MIT license. Please see the [LICENSE](./LI
 
 ## Tests
 
-Tests can be run using Jest by typing the following command:
+Tests can be run using Jest by typing the following in the command-line:
 
 ```
     npm test 
