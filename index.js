@@ -16,7 +16,7 @@ let id = []; // this will hold id numbers so that checks can be run to ensure th
 
 //function to initiate the inquirer prompts
 const init = () => {
-    console.log('Please build your team:');
+    console.log("Let's start building your team:");
     inquirer
         .prompt(questions.managerQuestions)  
         .then((answers) =>{ 
@@ -27,20 +27,19 @@ const init = () => {
         });
 };
 
-// function to present further questions to the user based on their answer to 'Which type of team member would you like to add?'
+// function to present further questions to the user based on their answer to 'Please select an option:' 
 const addAnotherEmployee = () => {
     inquirer
     .prompt(questions.addEmployee)  
     .then((answers) =>{ 
-        if(answers.employeeType == 'Engineer'){
+        if(answers.employeeType == 'Add an engineer'){
             addEngineerQuestions();
-        }else if(answers.employeeType == 'Intern'){
+        }else if(answers.employeeType == 'Add an intern'){
             addInternQuestions()
         }else{
-            console.log('You have finished building your team.')
+            console.log('You have finished building your team:')
             console.log(team);
-            console.log(id);
-           
+            // console.log(id);
             //Func call to use the team array (that's been created based on user input) to create a HTML file
             writeToFile(team);
         };
@@ -87,7 +86,6 @@ module.exports.id = id;
 
 
 //TODO:
-//  - create README
 //  - check tests are passed
 //  - in the questions.js file - how can I check ID input against ID array?
 //  - sort out flex of cards or maybe add a row per manager, engineer, intern?

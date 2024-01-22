@@ -47,14 +47,15 @@ Unit testing has been created for this application which can be run with Jest.
 > If you do not provide an answer, you'll be prompted to provide this. The application will not progress until an answer is provided.
 > When adding in an email, if you provide an invalid email address, you'll be prompted to enter a valid email address.
 
-4. Initially, you'll need to add the details of the manager of the team, after which you'll be asked which type of team member you would like to add:
-    * Engineer
-    * Intern
-    * I don't want to add any more team members
+4. Initially, you'll need to add the details of the manager of the team, after which you'll be asked to select an option:
+'Add an engineer', 'Add an intern', 'Finish building the team and create HTML file'
+    * Add an engineer
+    * Add an intern
+    * Finish building the team and create the HTML file
 
-    If you select `Engineer` or `Intern`, a new series of questions will be presented to obtain the relevant information for that team member and you'll return to the same question to allow you to continue to add several team members.
+    If you select `Add an engineer` or `Add an intern`, a new series of questions will be presented to obtain the relevant information for that team member and you'll return to the same question to allow you to continue to add several team members.
 
-5. Once you have completed adding all your team members, select `I don't want to add any more team members` to create your team.html file. You'll see a success comment in the terminal and a team.html file will have been created in the output folder. 
+5. Once you have completed adding all your team members, select `Finish building the team and create the HTML file` to create your `team.html` file. You'll see a success comment in the terminal and a team.html file will have been created in the output folder. 
 
 
 > [!CAUTION]
