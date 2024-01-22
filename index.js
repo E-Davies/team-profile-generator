@@ -11,7 +11,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./src/page-template.js");
 
-let team = []; // this will hold the classes created by the user
+let team = []; // this will hold the team member objects created by the user
 let id = []; // this will hold id numbers so that checks can be run to ensure the user inputs unique id no.'s
 
 //function to initiate the inquirer prompts
@@ -39,7 +39,7 @@ const addAnotherEmployee = () => {
         }else{
             console.log('You have finished building your team:')
             console.log(team);
-            // console.log(id);
+            console.log(id);
             //Func call to use the team array (that's been created based on user input) to create a HTML file
             writeToFile(team);
         };
@@ -80,13 +80,10 @@ function writeToFile(team){
 // function call to initialize program when you type node index.js into terminal
 init();
 
+//export the id variable
 module.exports.id = id;
 
 
 
 
-//TODO:
-//  - check tests are passed
-//  - in the questions.js file - how can I check ID input against ID array?
-//  - sort out flex of cards or maybe add a row per manager, engineer, intern?
-//  - check responsiveness
+
