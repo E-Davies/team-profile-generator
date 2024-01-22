@@ -3,9 +3,9 @@
 
 ## Description
 
-This command-line application has been created to allow a manager to generate a webpage that displays their team's basic info so that they have quick access to their teams emails and GitHub profiles.
+This command-line application has been created to allow a manager to generate a webpage that displays their team's basic info so that they have quick access to their team's emails and GitHub profiles.
 
-Using Node.js and the fs & inquirer NPM dependencies, this CLI application will take user input to produce a fully complete team.html file that displays the teams details. 
+Using Node.js and the fs & inquirer NPM dependencies, this CLI application will take user input to produce a fully complete team.html file that displays the team's details. 
 
 Unit testing has been created for this application which can be run with Jest.
 
@@ -26,7 +26,7 @@ Unit testing has been created for this application which can be run with Jest.
 2. Open the repository in VS Code.
 
 3. Ensure you have node.js installed on your computer. To check open the Windows Command Prompt, Powershell or a similar command line tool, and type:
-    ```sh 
+    ``` 
     node -v
     ```
     If you have node.js installed it will print a version number (e.g. v0. 10.35). Otherwise, go to [nodejs.org](https://nodejs.org/en) and download it (it is recommended to download the LTS version).
@@ -37,7 +37,7 @@ Unit testing has been created for this application which can be run with Jest.
 
 2. In the terminal, run the command:
 
-    ```sh 
+    ```
     node index.js
     ```
 
@@ -64,13 +64,13 @@ Unit testing has been created for this application which can be run with Jest.
 
 ## License 
 
-This application is covered under the MIT license. Please see the [LICENSE](../LICENSE) file in the repository for the full details of this license.
+This application is covered under the MIT license. Please see the [LICENSE](./LICENSE) file in the repository for the full details of this license.
 
 ## Tests
 
 Tests can be run using Jest by typing the following command:
 
-```sh
+```
     npm test 
 ```
 
