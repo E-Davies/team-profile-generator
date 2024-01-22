@@ -87,5 +87,8 @@ module.exports.id = id;
 
 
 //TODO:
+//  - create README
+//  - check tests are passed
 //  - in the questions.js file - how can I check ID input against ID array?
 //  - sort out flex of cards or maybe add a row per manager, engineer, intern?
+//  - check responsiveness

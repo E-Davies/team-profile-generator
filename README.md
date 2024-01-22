@@ -1,142 +1,84 @@
-# Module 12 Object-Oriented Programming: Team Profile Generator
+# Team Profile Generator
+![MIT License Badge](https://img.shields.io/badge/License-MIT-blue)
 
-## Your Task
+## Description
 
-Your task is to take the given starter code and convert it into a working Node.js command-line application. This application will take in information about employees on a software engineering team, then generates an HTML webpage that displays summaries for each person. You have been provided with tests, so make sure every part of your code passes each provided test.
+This command-line application has been created to allow a manager to generate a webpage that displays their team's basic info so that they have quick access to their teams emails and GitHub profiles.
 
-## User Story
+Using Node.js and the fs & inquirer NPM dependencies, this CLI application will take user input to produce a fully complete team.html file that displays the teams details. 
 
-As a manager a user want to generate a webpage that displays my team's basic info so that a user have quick access to their emails and GitHub profiles.
+Unit testing has been created for this application which can be run with Jest.
 
-## Instructions
+## Table of Contents 
 
-* Create a command-line application that accepts accepts user input using the provided starter code.   
-  * Create classes for each team member provided and export them. The tests for these classes (in the `_tests_` directory) must ALL pass.     
-    * The first class is an `Employee` parent class with the following properties and methods:       
-      * `name`
-      * `id`
-      * `email`
-      * `getName()`
-      * `getId()`
-      * `getEmail()`
-      * `getRole()`&mdash;returns `'Employee'`     
-    * The other three classes will extend `Employee`.      
-    * In addition to `Employee`'s properties and methods, `Manager` will also have the following:
-      * `officeNumber`
-      * `getRole()`&mdash;overridden to return `'Manager'`
-    * In addition to `Employee`'s properties and methods, `Engineer` will also have the following:
-      * `github`&mdash;GitHub username
-      * `getGithub()`
-      * `getRole()`&mdash;overridden to return `'Engineer'`
-    * In addition to `Employee`'s properties and methods, `Intern` will also have the following:
-      * `school`
-      * `getSchool()`
-      * `getRole()`&mdash;overridden to return `'Intern'`
-    * Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.   
-  * Write code in `index.js` that uses inquirer to gather information about the development team members and creates objects for each team member using the correct classes as blueprints.
-    * When a user starts the application then they are prompted to enter the **team manager**’s:
-      * Name
-      * Employee ID
-      * Email address
-      * Office number
-    * When a user enters those requirements then the user is presented with a menu with the option to:
-      * Add an engineer
-      * Add an intern 
-      * Finish building the team
-    * When a user selects the **engineer** option then a user is prompted to enter the following and then the user is taken back to the menu:
-      * Engineer's Name
-      * ID
-      * Email
-      * GitHub username
-    * When a user selects the intern option then a user is prompted to enter the following and then the user is taken back to the menu:
-      * Intern’s name
-      * ID
-      * Email
-      * School
-    * When a user decides to finish building their team then they exit the application, and the HTML is generated.
-  * Call the `render` function (provided for you) and pass in an array containing all employee objects; 
-    * The `render` function will generate and return a block of HTML including templated divs for each employee!
-  * Create an HTML file using the HTML returned from the `render` function. 
-    * Write it to a file named `team.html` in the `output` folder. 
-    * You can use the provided variable `outputPath` to target this location.
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Tests](#tests)
+* [Technical Skills](#technical-skills-used-in-this-project)
 
----
+## Installation
 
-## Mock-Up
+1. Fork the repository by clicking the Fork button:
 
-The following image shows a mock-up of the generated HTML’s appearance and functionality:
+    ![Screenshot of the fork button in GitHub](./assets/images/fork-screenshot.png)
 
-![HTML webpage titled “My Team” features five boxes listing employee names, titles, and other key info.](./Assets/14-object-oriented-programming-challenge-demo.png)
+2. Open the repository in VS Code.
 
-The styling in the image is just an example, so feel free to add your own.
+3. Ensure you have node.js installed on your computer. To check open the Windows Command Prompt, Powershell or a similar command line tool, and type:
+    ```sh 
+    node -v
+    ```
+    If you have node.js installed it will print a version number (e.g. v0. 10.35). Otherwise, go to [nodejs.org](https://nodejs.org/en) and download it (it is recommended to download the LTS version).
 
----
+## Usage 
 
-## Getting Started
+1. Open the repository in VS Code and right click on the index.js file and select 'Open in Integrated Terminal'.
 
-This Challenge will combine many of the skills we've covered so far. In addition to the User Story and Acceptance Criteria, we’ve provided some guidelines to help get started.
+2. In the terminal, run the command:
 
-Your application should use [Jest](https://www.npmjs.com/package/jest) for running the unit tests and [Inquirer](https://www.npmjs.com/package/inquirer) for collecting input from the user. The application will be invoked by using the following command:
+    ```sh 
+    node index.js
+    ```
 
-```bash
-node index.js
+3. A series of questions about your team will be presented in the terminal. Please type your answer to each question in the terminal and press enter. When presented with a list of choices, use the up & down arrows to select an option and then press enter to select it. 
+
+> [!NOTE]
+> If you do not provide an answer, you'll be prompted to provide this. The application will not progress until an answer is provided.
+> When adding in an email, if you provide an invalid email address, you'll be prompted to enter a valid email address.
+
+4. Initially, you'll need to add the details of the manager of the team, after which you'll be asked which type of team member you would like to add:
+    * Engineer
+    * Intern
+    * I don't want to add any more team members
+
+    If you select `Engineer` or `Intern`, a new series of questions will be presented to obtain the relevant information for that team member and you'll return to the same question to allow you to continue to add several team members.
+
+5. Once you have completed adding all your team members, select `I don't want to add any more team members` to create your team.html file. You'll see a success comment in the terminal and a team.html file will have been created in the output folder. 
+
+
+> [!CAUTION]
+> If you run the 'node index.js' command again in the integrated terminal, it will overwrite any current team.html file that may already exist in the output folder.
+
+### This video provides a walkthrough of how to use the application:
+
+## License 
+
+This application is covered under the MIT license. Please see the [LICENSE](../LICENSE) file in the repository for the full details of this license.
+
+## Tests
+
+Tests can be run using Jest by typing the following command:
+
+```sh
+    npm test 
 ```
 
----
+## Technical skills used in this project
 
-## Hints
-
-* You will want to make your methods as pure as possible. This means try to make your methods simple so that they are easier to test.
-
-* The different employee types should all inherit some methods and properties from a base class of `Employee`.
- 
-* Be sure to test out each class and verify it generates an object with the correct structure and methods. This structure will be crucial in order for the provided `render` function to work!
-  
-* You may need to check if the `output` folder exists and create it if it does not.
-
----
-
-## Grading Requirements
-
-This Challenge is graded based on the following criteria: 
-
-### Deliverables: 25%
-
-* A sample HTML file generated using the application must be submitted.
-
-* Your GitHub repository containing your application code.
-
-### Technical Acceptance Criteria: 50%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-	* Uses the [Inquirer package](https://www.npmjs.com/package/inquirer).
-
-	* All tests pass using the [Jest package](https://www.npmjs.com/package/jest).
-
-  * The application must have `Employee`, `Manager`, `Engineer`, and `Intern` classes.
-
-### Repository Quality: 25%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality readme with description.
-
----
-
-## Review
-
-You are required to submit the following for review:
-
-* A sample HTML file generated using your application.
-
-* The URL of the GitHub repository, with a unique name and a readme describing the project.
-
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+![Static Badge - HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![Static Badge - CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![Static Badge - Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Static Badge - JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+![Static Badge - node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+![Static Badge - Jest](https://img.shields.io/badge/Jest-997781?style=for-the-badge&logo=jest&logoColor=9C4860)
