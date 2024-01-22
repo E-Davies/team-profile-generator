@@ -66,7 +66,9 @@ Unit testing has been created for this application which can be run with Jest.
 > [!CAUTION]
 > If you run the 'node index.js' command again in the integrated terminal, it will overwrite any current team.html file that may already exist in the output folder.
 
-### This video provides a walkthrough of how to use the application:
+![screenshot of team html file](./assets/images/screenshot.JPG) 
+
+<!-- ### This video provides a walkthrough of how to use the application: -->
 
 ## License 
 

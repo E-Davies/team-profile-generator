@@ -39,7 +39,6 @@ const addAnotherEmployee = () => {
         }else{
             console.log('You have finished building your team:')
             console.log(team);
-            console.log(id);
             //Func call to use the team array (that's been created based on user input) to create a HTML file
             writeToFile(team);
         };
@@ -82,8 +81,4 @@ init();
 
 //export the id variable
 module.exports.id = id;
-
-
-
-
 
